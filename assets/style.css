@@ -35,3 +35,8 @@ main{min-width:0}.eyebrow{color:var(--accent);font-size:10px;font-weight:650;let
 @media(max-width:760px){.publication-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.publication{padding:12px}.paper-preview img{height:140px}.publication h3{font-size:12px}.publication-meta{font-size:9px}.publication-authors,.publication-citation{font-size:10px}}
 @media(max-width:480px){.publication-grid{grid-template-columns:minmax(0,1fr)}.publication{padding:16px}.paper-preview img{height:160px}.publication h3{font-size:14px}.publication-authors,.publication-citation,.paper-summary{font-size:11px}}
 @media print{.publication-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.publication{break-inside:avoid}.thumbnail-credits{display:none}}
+
+/* Portrait supplied through the owner's résumé. */
+.profile-photo{display:block;object-fit:cover;object-position:center;margin-bottom:28px}
+.masthead-inner nav{margin-left:auto}
+@media(max-width:760px){.profile-photo{grid-column:1;grid-row:1;width:82px;height:82px;margin-bottom:0}.masthead-inner nav{margin-left:0}.menu-toggle{margin-left:auto}}
