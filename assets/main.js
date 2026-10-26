@@ -89,6 +89,28 @@
   });
   window.addEventListener('scroll', closePreview, {passive: true});
   window.addEventListener('resize', closePreview);
+  // Reveal each text block once; keep all content visible without motion support.
+  const revealBlocks = [...document.querySelectorAll('[data-reveal]')];
+  if ('IntersectionObserver' in window && !reduceMotion.matches) {
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-revealed');
+        revealObserver.unobserve(entry.target);
+      });
+    }, {threshold: 0.08});
+    revealBlocks.forEach((block, index) => {
+      block.style.setProperty('--reveal-delay', `${Math.min(index * 90, 270)}ms`);
+      revealObserver.observe(block);
+    });
+    root.classList.add('motion-ready');
+    reduceMotion.addEventListener('change', (event) => {
+      if (event.matches) {
+        root.classList.remove('motion-ready');
+        revealObserver.disconnect();
+      }
+    });
+  }
   document.querySelector('#year').textContent = String(new Date().getFullYear());
   updateActive();
 })();
