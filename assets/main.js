@@ -123,5 +123,14 @@
       updated.textContent = modified.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
     }
   }
+  // Publications page: expand a shortened author list in place.
+  document.querySelectorAll('.pub-toggle').forEach((button) => {
+    button.addEventListener('click', () => {
+      const list = button.closest('.pub-authors');
+      const open = list.classList.toggle('is-expanded');
+      button.setAttribute('aria-expanded', String(open));
+      button.textContent = open ? button.dataset.less : button.dataset.more;
+    });
+  });
   updateActive();
 })();

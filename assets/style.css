@@ -136,7 +136,8 @@ main{min-width:0}.eyebrow{color:var(--accent);font-size:10px;font-weight:650;let
 .pub-venue span{font-style:italic;color:var(--accent)}
 .pub-list li[lang="zh-Hans"] .pub-title{font-family:"Songti SC","STSong","Noto Serif SC","Source Han Serif SC",var(--display-font)}
 @media(max-width:480px){.pub-title{font-size:15.5px}.view-all{text-align:left}}
-.pub-all-authors{margin-top:3px}
-.pub-all-authors summary{cursor:pointer;width:fit-content;font-size:11.5px;color:var(--muted)}
-.pub-all-authors summary:hover,.pub-all-authors summary:focus-visible{color:var(--accent)}
-.pub-all-authors p{margin:6px 0 2px;padding:10px 12px;background:var(--soft);border-radius:4px;font-size:12px;line-height:1.7}
+.pub-ellipsis,.pub-toggle{display:none}
+.js .pub-authors.is-collapsible:not(.is-expanded) .pub-more{display:none}
+.js .pub-authors.is-collapsible:not(.is-expanded) .pub-ellipsis{display:inline}
+.js .pub-toggle{display:inline;margin-left:6px;padding:0;border:0;background:none;font:inherit;font-size:11.5px;color:var(--accent);cursor:pointer;white-space:nowrap;border-bottom:1px dotted currentColor}
+.js .pub-toggle:hover,.js .pub-toggle:focus-visible{color:var(--heading)}
