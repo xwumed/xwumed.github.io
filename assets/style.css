@@ -100,3 +100,7 @@ main{min-width:0}.eyebrow{color:var(--accent);font-size:10px;font-weight:650;let
 @media(max-width:760px){.about-heading{font-size:44px;letter-spacing:-1.3px;padding-bottom:20px;margin-bottom:28px}.about-layout .about-copy{font-size:19px;line-height:1.65;letter-spacing:0}}
 @media(max-width:360px){.about-layout .about-copy{font-size:18px}}
 @media print{.about-heading{font-size:30px}.about-layout .about-copy{font-size:12pt}[data-reveal]{opacity:1!important;transform:none!important}.ink-emphasis{background:none}}
+
+/* Short tagline under the name (replaces position/affiliation block). */
+.slogan{font-family:var(--display-font);font-size:17px;font-style:italic;line-height:1.5;color:var(--muted);margin:2px 0 0;letter-spacing:.1px}
+@media(max-width:400px){.slogan{font-size:14px}}
