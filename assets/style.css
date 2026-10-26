@@ -110,3 +110,6 @@ main{min-width:0}.eyebrow{color:var(--accent);font-size:10px;font-weight:650;let
 .publication-meta{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:2px 10px}
 .publication-meta .journal-name{grid-column:auto}
 .publication-meta time{white-space:nowrap}
+/* Chinese name beside the English name. */
+.about-layout .profile h1 .name-zh{font-family:"Songti SC","STSong","Noto Serif SC","Source Han Serif SC",serif;font-size:22px;font-weight:400;letter-spacing:2px;margin-left:12px;color:var(--heading)}
+@media(max-width:400px){.about-layout .profile h1 .name-zh{font-size:17px;margin-left:6px}}
