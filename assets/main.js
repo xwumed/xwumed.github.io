@@ -112,5 +112,15 @@
     });
   }
   document.querySelector('#year').textContent = String(new Date().getFullYear());
+  // "Last updated": use the server's Last-Modified (set by GitHub Pages on each deploy).
+  // If the header is missing, browsers report "now"; in that case keep the date written in the HTML.
+  const updated = document.querySelector('#last-updated');
+  if (updated) {
+    const modified = new Date(document.lastModified);
+    if (!Number.isNaN(modified.getTime()) && Date.now() - modified.getTime() > 60 * 1000) {
+      updated.dateTime = modified.toISOString().slice(0, 10);
+      updated.textContent = modified.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+    }
+  }
   updateActive();
 })();
