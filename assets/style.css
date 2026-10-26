@@ -156,9 +156,9 @@ main{min-width:0}.eyebrow{color:var(--accent);font-size:10px;font-weight:650;let
 @keyframes ghostA{0%,78%,100%{opacity:0;transform:none}82%{opacity:.45;transform:translate(3px,1px)}86%{opacity:.6;transform:translate(4px,1px)}90%{opacity:.35;transform:translate(2px,0)}94%{opacity:0;transform:none}}
 @keyframes ghostB{0%,78%,100%{opacity:0;transform:none}82%{opacity:.45;transform:translate(-3px,-1px)}86%{opacity:.6;transform:translate(-4px,-1px)}90%{opacity:.35;transform:translate(-2px,0)}94%{opacity:0;transform:none}}
 
-/* ---- Motion: portrait develops into full colour on hover ---- */
-.profile-photo{filter:grayscale(.35) saturate(.8) sepia(.06);transition:filter .55s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
-@media(hover:hover){.profile:hover .profile-photo{filter:none;transform:scale(1.03)}}
+/* ---- Motion: portrait zooms slightly on hover ---- */
+.profile-photo{transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+@media(hover:hover){.profile:hover .profile-photo{transform:scale(1.03)}}
 
 /* ---- Motion: cards lift slightly on hover ---- */
 .publication{transition:transform .3s cubic-bezier(.2,.7,.3,1),border-color .3s ease,box-shadow .3s ease}
