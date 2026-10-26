@@ -48,20 +48,35 @@
   const enlargedPage = magnifier.querySelector('img');
   const canHover = window.matchMedia('(hover: hover)');
   let previewButton = null;
+  let previewDelay = null;
+  let hideDelay = null;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const closePreview = () => {
-    magnifier.hidden = true;
+    clearTimeout(previewDelay);
+    clearTimeout(hideDelay);
+    magnifier.classList.remove('is-visible');
     if (previewButton) previewButton.setAttribute('aria-expanded', 'false');
     previewButton = null;
+    hideDelay = setTimeout(() => { magnifier.hidden = true; }, reduceMotion.matches ? 0 : 260);
   };
   const showPreview = (button) => {
+    clearTimeout(previewDelay);
+    clearTimeout(hideDelay);
     if (previewButton && previewButton !== button) previewButton.setAttribute('aria-expanded', 'false');
     previewButton = button;
     enlargedPage.src = button.querySelector('img').src;
     magnifier.hidden = false;
+    // Establish the initial frame before starting the short fade.
+    magnifier.getBoundingClientRect();
+    magnifier.classList.add('is-visible');
     button.setAttribute('aria-expanded', 'true');
   };
   document.querySelectorAll('.paper-preview').forEach((button) => {
-    button.addEventListener('pointerenter', () => { if (canHover.matches) showPreview(button); });
+    button.addEventListener('pointerenter', () => {
+      if (!canHover.matches) return;
+      clearTimeout(previewDelay);
+      previewDelay = setTimeout(() => showPreview(button), 280);
+    });
     button.addEventListener('pointerleave', () => { if (canHover.matches) closePreview(); });
     button.addEventListener('focus', () => showPreview(button));
     button.addEventListener('blur', closePreview);
