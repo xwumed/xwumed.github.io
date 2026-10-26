@@ -15,10 +15,9 @@ main{min-width:0}.eyebrow{color:var(--accent);font-size:10px;font-weight:650;let
 .publication-note{font-size:11px;color:var(--muted);margin-bottom:20px}
 .publication-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;align-items:stretch}
 .publication{min-width:0;padding:15px;border:1px solid var(--border);border-radius:4px;display:flex;flex-direction:column}
-.paper-preview{display:block;color:var(--muted);text-decoration:none;margin-bottom:15px}
-.paper-preview img{display:block;width:100%;height:155px;object-fit:contain;background:var(--soft);padding:8px;border:1px solid var(--border);border-radius:2px}
-.paper-preview:hover img{border-color:var(--accent)}
-.paper-preview>span{display:flex;justify-content:space-between;margin-top:6px;font-size:9px}
+.paper-preview{display:block;width:min(150px,100%);margin:0 auto 15px;padding:0;border:0;background:none;cursor:zoom-in}
+.paper-preview img{display:block;width:100%;height:auto;object-fit:contain;background:#fff;border:1px solid var(--border);border-radius:2px;box-shadow:0 3px 12px #122f4010}
+.paper-preview:hover img,.paper-preview:focus-visible img{border-color:var(--accent)}
 .publication-body{display:flex;flex-direction:column;flex:1;min-width:0}
 .publication-meta{display:flex;flex-wrap:wrap;align-items:center;gap:5px 8px;font-size:9px;font-weight:600;line-height:1.6;color:var(--accent);margin-bottom:9px}
 .publication-meta time{color:var(--muted);font-weight:400}
@@ -32,11 +31,17 @@ main{min-width:0}.eyebrow{color:var(--accent);font-size:10px;font-weight:650;let
 .thumbnail-credits{font-size:10px;color:var(--muted);margin-top:25px}.thumbnail-credits summary{cursor:pointer;width:fit-content}.thumbnail-credits p{margin:12px 0 7px}.thumbnail-credits ul{padding-left:18px;margin:0}.thumbnail-credits a{color:inherit}
 .paper-summary summary:focus-visible,.thumbnail-credits summary:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
 @media(max-width:1000px) and (min-width:761px){.publication-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}}
-@media(max-width:760px){.publication-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.publication{padding:12px}.paper-preview img{height:140px}.publication h3{font-size:12px}.publication-meta{font-size:9px}.publication-authors,.publication-citation{font-size:10px}}
-@media(max-width:480px){.publication-grid{grid-template-columns:minmax(0,1fr)}.publication{padding:16px}.paper-preview img{height:160px}.publication h3{font-size:14px}.publication-authors,.publication-citation,.paper-summary{font-size:11px}}
+@media(max-width:760px){.publication-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.publication{padding:12px}.publication h3{font-size:12px}.publication-meta{font-size:9px}.publication-authors,.publication-citation{font-size:10px}}
+@media(max-width:480px){.publication-grid{grid-template-columns:minmax(0,1fr)}.publication{padding:16px}.publication h3{font-size:14px}.publication-authors,.publication-citation,.paper-summary{font-size:11px}}
 @media print{.publication-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.publication{break-inside:avoid}.thumbnail-credits{display:none}}
 
 /* Portrait supplied through the owner's résumé. */
 .profile-photo{display:block;object-fit:cover;object-position:center;margin-bottom:28px}
 .masthead-inner nav{margin-left:auto}
 @media(max-width:760px){.profile-photo{grid-column:1;grid-row:1;width:82px;height:82px;margin-bottom:0}.masthead-inner nav{margin-left:0}.menu-toggle{margin-left:auto}}
+
+.paper-magnifier[hidden]{display:none}
+.paper-magnifier{position:fixed;inset:0;z-index:100;display:grid;place-items:center;pointer-events:none;background:rgba(15,28,36,.16);padding:20px}
+.paper-magnifier img{display:block;width:auto;height:auto;max-width:calc(100vw - 40px);max-height:calc(100dvh - 40px);object-fit:contain;background:white;box-shadow:0 12px 55px #0005;border:1px solid var(--border)}
+@media(hover:none){.paper-magnifier{pointer-events:auto;cursor:zoom-out}}
+@media print{.paper-magnifier{display:none!important}}

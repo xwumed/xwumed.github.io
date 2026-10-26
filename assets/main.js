@@ -44,6 +44,36 @@
     scheduled = false;
   };
   window.addEventListener('scroll', () => { if (!scheduled) { scheduled = true; requestAnimationFrame(updateActive); } }, {passive: true});
+  const magnifier = document.querySelector('#paper-magnifier');
+  const enlargedPage = magnifier.querySelector('img');
+  const canHover = window.matchMedia('(hover: hover)');
+  let previewButton = null;
+  const closePreview = () => {
+    magnifier.hidden = true;
+    if (previewButton) previewButton.setAttribute('aria-expanded', 'false');
+    previewButton = null;
+  };
+  const showPreview = (button) => {
+    if (previewButton && previewButton !== button) previewButton.setAttribute('aria-expanded', 'false');
+    previewButton = button;
+    enlargedPage.src = button.querySelector('img').src;
+    magnifier.hidden = false;
+    button.setAttribute('aria-expanded', 'true');
+  };
+  document.querySelectorAll('.paper-preview').forEach((button) => {
+    button.addEventListener('pointerenter', () => { if (canHover.matches) showPreview(button); });
+    button.addEventListener('pointerleave', () => { if (canHover.matches) closePreview(); });
+    button.addEventListener('focus', () => showPreview(button));
+    button.addEventListener('blur', closePreview);
+    button.addEventListener('click', () => showPreview(button));
+  });
+  magnifier.addEventListener('click', closePreview);
+  document.addEventListener('keydown', (event) => { if (event.key === 'Escape') closePreview(); });
+  document.addEventListener('pointerdown', (event) => {
+    if (previewButton && !previewButton.contains(event.target)) closePreview();
+  });
+  window.addEventListener('scroll', closePreview, {passive: true});
+  window.addEventListener('resize', closePreview);
   document.querySelector('#year').textContent = String(new Date().getFullYear());
   updateActive();
 })();
