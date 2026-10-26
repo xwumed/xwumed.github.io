@@ -37,6 +37,7 @@
   let scheduled = false;
   const updateActive = () => {
     const sections = [...document.querySelectorAll('main section[id]')];
+    if (!sections.length) { scheduled = false; return; }
     let current = sections[0];
     for (const section of sections) if (section.getBoundingClientRect().top <= 150) current = section;
     if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 5) current = sections[sections.length - 1];

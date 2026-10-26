@@ -113,3 +113,26 @@ main{min-width:0}.eyebrow{color:var(--accent);font-size:10px;font-weight:650;let
 /* Chinese name beside the English name. */
 .about-layout .profile h1 .name-zh{font-family:"Songti SC","STSong","Noto Serif SC","Source Han Serif SC",serif;font-size:22px;font-weight:400;letter-spacing:2px;margin-left:12px;color:var(--heading)}
 @media(max-width:400px){.about-layout .profile h1 .name-zh{font-size:17px;margin-left:6px}}
+/* "View all" link under Featured Publications. */
+.view-all{margin:26px 0 0;text-align:right;font-size:14px}
+.view-all a{color:var(--accent);text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:2px}
+.view-all a:hover,.view-all a:focus-visible{color:var(--heading)}
+/* Full publications page. */
+.pub-page-head{margin-bottom:48px}
+.pub-back{display:inline-block;font-size:13px;color:var(--muted);text-decoration:none;margin-bottom:20px}
+.pub-back:hover,.pub-back:focus-visible{color:var(--accent)}
+.pub-page-head h1{font-family:var(--display-font);font-weight:400;letter-spacing:-1px;color:var(--heading);margin:0 0 12px}
+.pub-intro{font-size:12px;color:var(--muted);margin:0}
+.pub-section{margin-bottom:56px}
+.pub-heading-zh{font-size:.7em;color:var(--muted);margin-left:8px;letter-spacing:1px}
+.pub-list{list-style:none;padding:0;margin:0}
+.pub-list li{padding:16px 0;border-bottom:1px solid var(--border)}
+.pub-list li:last-child{border-bottom:0}
+.pub-title{display:block;font-family:var(--display-font);font-size:17px;line-height:1.45;color:var(--heading);text-decoration:none;margin-bottom:6px}
+.pub-title:hover,.pub-title:focus-visible{color:var(--accent)}
+.pub-authors{font-size:12.5px;line-height:1.65;color:var(--text);margin:0 0 4px}
+.pub-authors strong{font-weight:600;color:var(--heading)}
+.pub-venue{font-size:12px;color:var(--muted);margin:0}
+.pub-venue span{font-style:italic;color:var(--accent)}
+.pub-list li[lang="zh-Hans"] .pub-title{font-family:"Songti SC","STSong","Noto Serif SC","Source Han Serif SC",var(--display-font)}
+@media(max-width:480px){.pub-title{font-size:15.5px}.view-all{text-align:left}}
