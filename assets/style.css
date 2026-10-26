@@ -63,21 +63,23 @@ main{min-width:0}.eyebrow{color:var(--accent);font-size:10px;font-weight:650;let
 @media(max-width:760px){.connect-section{padding:38px 0 42px}.connect-section h2{font-size:34px}.connect-section .connect-intro{font-size:16px}.connect-links{gap:9px}.connect-links a{font-size:11px;padding:9px 13px}}
 @media(prefers-reduced-motion:reduce){.connect-links a{transition:none}}
 
-/* A single introduction block replaces the persistent profile sidebar. */
-.page-layout{display:block;max-width:1130px;padding:52px 38px 0}
+/* Profile header above a comfortably sized biography. */
+.page-layout{display:block;max-width:1130px;padding:48px 38px 0}
 .masthead-inner{max-width:1130px}
-.about-layout{display:grid;grid-template-columns:300px minmax(0,1fr);gap:56px;align-items:start}
-.about-layout .profile{position:static;top:auto;display:grid;grid-template-columns:82px minmax(0,1fr);gap:20px;align-items:start;border:0;padding:0;margin:0}
-.about-layout .profile-photo{grid-column:1;grid-row:1;width:82px;height:82px;margin:5px 0 0 4px;outline-width:4px;box-shadow:0 0 0 5px var(--border)}
-.about-layout .profile-identity{grid-column:2;grid-row:1}
-.about-layout .profile h2{font-size:23px;margin:0 0 11px;line-height:1.45}
-.about-layout .profile h2 span{display:inline;font-size:10px;font-weight:400;letter-spacing:.3px;margin:0 0 0 5px;white-space:nowrap}
-.about-layout .position{font-size:12px;margin-bottom:8px}
-.about-layout .affiliation{font-size:12px;line-height:1.75;margin-bottom:13px}
-.about-layout .location{font-size:11px;gap:7px;margin-bottom:0}
-.about-layout .about-copy{max-width:none}
+.about-layout{display:block}
+.about-layout .profile{position:static;top:auto;display:grid;grid-template-columns:112px minmax(0,1fr);gap:28px;align-items:center;border:0;padding:0;margin:0}
+.about-layout .profile-photo{grid-column:1;grid-row:1;width:112px;height:112px;margin:0 0 0 5px;outline-width:4px;box-shadow:0 0 0 5px var(--border)}
+.about-layout .profile-identity{grid-column:2;grid-row:1;max-width:none}
+.about-layout .profile h2{font-size:34px;margin:0 0 7px;line-height:1.35;letter-spacing:-.7px}
+.about-layout .profile h2 span{display:inline;font-size:14px;font-weight:400;letter-spacing:.4px;margin:0 0 0 10px;white-space:nowrap}
+.about-layout .position{font-size:15px;margin-bottom:7px}
+.about-layout .affiliation{font-size:14px;line-height:1.7;margin-bottom:9px}
+.about-layout .location{font-size:12px;gap:7px;margin-bottom:0}
+.about-layout .about-copy{max-width:950px;font-size:17px;line-height:1.85;margin-top:30px}
+.about-layout .about-copy p{margin-bottom:18px}
 .about-layout .about-copy p:last-child{margin-bottom:0}
-@media(max-width:900px){.about-layout{grid-template-columns:270px minmax(0,1fr);gap:32px}}
-@media(max-width:760px){.page-layout{padding:32px 24px 0}.about-layout{grid-template-columns:minmax(0,1fr);gap:25px}.about-layout .profile{grid-template-columns:82px minmax(0,1fr);gap:23px;padding-bottom:25px;border-bottom:1px solid var(--border)}.about-layout .profile h2{font-size:23px}.about-layout .profile-identity{max-width:340px}.about-layout .affiliation{font-size:12px}.about-layout .about-copy{font-size:14px}}
-@media(max-width:360px){.page-layout{padding-left:17px;padding-right:17px}.about-layout .profile{gap:18px}.about-layout .profile h2{font-size:21px}}
-@media print{.page-layout{padding:0}.about-layout{grid-template-columns:240px minmax(0,1fr);gap:30px}}
+.about-section{padding-bottom:8px;margin-bottom:44px}
+@media(max-width:760px){.page-layout{padding:32px 24px 0}.about-layout .profile{grid-template-columns:92px minmax(0,1fr);gap:22px;align-items:start}.about-layout .profile-photo{width:92px;height:92px;margin-top:5px}.about-layout .profile h2{font-size:28px}.about-layout .profile h2 span{font-size:12px;margin-left:7px}.about-layout .position{font-size:14px}.about-layout .affiliation{font-size:12px}.about-layout .location{font-size:11px}.about-layout .about-copy{font-size:16px;line-height:1.85;margin-top:27px}}
+@media(max-width:400px){.about-layout .profile h2{font-size:26px}.about-layout .profile h2 span{font-size:11px;margin-left:5px}.about-layout .profile{gap:20px}}
+@media(max-width:360px){.page-layout{padding-left:17px;padding-right:17px}.about-layout .profile{grid-template-columns:82px minmax(0,1fr);gap:18px}.about-layout .profile-photo{width:82px;height:82px}.about-layout .profile h2{font-size:24px}}
+@media print{.page-layout{padding:0}.about-layout .about-copy{font-size:12pt}}
