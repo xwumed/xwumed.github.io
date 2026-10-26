@@ -52,3 +52,13 @@ main{min-width:0}.eyebrow{color:var(--accent);font-size:10px;font-weight:650;let
 
 @media(max-width:760px){.publication-meta .journal-name{font-size:15px}}
 @media print{.publication{background:none}.section-heading h2{font-size:24px}}
+
+/* Quiet closing contact section, with compact outlined links. */
+.connect-section{text-align:center;border-top:1px solid var(--border);padding:52px 16px 58px;margin:0}
+.connect-section h2{font-family:var(--display-font);font-size:40px;font-weight:400;letter-spacing:-1px;margin:0 0 16px}
+.connect-section .connect-intro{font-family:var(--display-font);font-style:italic;font-size:18px;line-height:1.6;color:var(--muted);margin:0 0 30px}
+.connect-links{display:flex;justify-content:center;flex-wrap:wrap;gap:10px}
+.connect-links a{display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--accent);color:var(--accent);padding:10px 17px;font-size:12px;line-height:1.6;text-decoration:none;transition:background-color 160ms ease}
+.connect-links a:hover{background:var(--tag)}
+@media(max-width:760px){.connect-section{padding:38px 0 42px}.connect-section h2{font-size:34px}.connect-section .connect-intro{font-size:16px}.connect-links{gap:9px}.connect-links a{font-size:11px;padding:9px 13px}}
+@media(prefers-reduced-motion:reduce){.connect-links a{transition:none}}
