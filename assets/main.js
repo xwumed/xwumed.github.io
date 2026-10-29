@@ -132,5 +132,22 @@
       button.textContent = open ? button.dataset.less : button.dataset.more;
     });
   });
+  // Match the viewport to five complete entries, including wrapped mobile text.
+  const news = document.querySelector('.news-list');
+  if (news && news.children.length > 5) {
+    const sizeNews = () => {
+      const padding = getComputedStyle(news);
+      const height = [...news.children].slice(0, 5).reduce((sum, entry) => sum + entry.getBoundingClientRect().height, 0)
+        + parseFloat(padding.paddingTop) + parseFloat(padding.paddingBottom);
+      news.style.setProperty('--news-height', `${height}px`);
+    };
+    sizeNews();
+    window.addEventListener('resize', sizeNews, { passive: true });
+    if ('ResizeObserver' in window) {
+      const observer = new ResizeObserver(sizeNews);
+      [...news.children].slice(0, 5).forEach((entry) => observer.observe(entry));
+    }
+    if (document.fonts) document.fonts.ready.then(sizeNews);
+  }
   updateActive();
 })();

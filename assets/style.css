@@ -185,3 +185,8 @@ main{min-width:0}.eyebrow{color:var(--accent);font-size:10px;font-weight:650;let
 /* Single merged list: type label at top right of each entry. */
 .pub-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px}
 .pub-type{flex:none;font:500 10px/1 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);border:1px solid var(--border);border-radius:2px;padding:4px 6px}
+
+/* Keep five recent updates visible; older news remains in the same scroll region. */
+.news-list{max-height:var(--news-height,440px);overflow-y:auto;scrollbar-width:thin;scrollbar-color:var(--accent) transparent}
+.news-list:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+@media print{.news-list{max-height:none;overflow:visible}}
