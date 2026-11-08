@@ -1,0 +1,17 @@
+Licenses for the unmodified publisher PDFs hosted with this academic homepage.
+The publisher files retain their complete author and copyright information.
+
+hemaguide.pdf
+Julian Zoller et al. (2026). Clinical decision support in hematological malignancies using a case-grounded AI agent. Nature Medicine.
+Source: https://doi.org/10.1038/s41591-026-04494-4
+License: https://creativecommons.org/licenses/by/4.0/
+
+osteosarcoma.pdf
+Qiuping Ren et al. (2025). Pathology-interpretable radiomic model for predicting clinical outcome in patients with osteosarcoma: a retrospective, multicenter study. BMC Medicine.
+Source: https://doi.org/10.1186/s12916-025-04424-0
+License: https://creativecommons.org/licenses/by-nc-nd/4.0/
+
+nasopharyngeal.pdf
+Jie Sun et al. (2025). Radiomic Model Associated with Tumor Microenvironment Predicts Immunotherapy Response and Prognosis in Patients with Locoregionally Advanced Nasopharyngeal Carcinoma. Research.
+Source: https://doi.org/10.34133/research.0749
+License: https://creativecommons.org/licenses/by/4.0/
