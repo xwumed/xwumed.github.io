@@ -120,7 +120,7 @@
     const modified = new Date(document.lastModified);
     if (!Number.isNaN(modified.getTime()) && Date.now() - modified.getTime() > 60 * 1000) {
       updated.dateTime = modified.toISOString().slice(0, 10);
-      updated.textContent = modified.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+      updated.textContent = modified.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
     }
   }
   // Publications page: expand a shortened author list in place.
