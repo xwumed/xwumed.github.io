@@ -190,3 +190,8 @@ main{min-width:0}.eyebrow{color:var(--accent);font-size:10px;font-weight:650;let
 .news-list{max-height:var(--news-height,440px);overflow-y:auto;scrollbar-width:thin;scrollbar-color:var(--accent) transparent}
 .news-list:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
 @media print{.news-list{max-height:none;overflow:visible}}
+
+/* Compact dated honors and funding on the homepage. */
+.honors-heading{font-size:14px;margin:0 0 6px}
+.honors-list{list-style:none;padding:0;margin:0 0 18px;color:var(--muted);font-size:14px;line-height:1.65}
+.honors-list li + li{margin-top:4px}
