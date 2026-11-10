@@ -191,7 +191,16 @@ main{min-width:0}.eyebrow{color:var(--accent);font-size:10px;font-weight:650;let
 .news-list:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
 @media print{.news-list{max-height:none;overflow:visible}}
 
-/* Compact dated honors and funding on the homepage. */
-.honors-heading{font-size:14px;margin:0 0 6px}
-.honors-list{list-style:none;padding:0;margin:0 0 18px;color:var(--muted);font-size:14px;line-height:1.65}
-.honors-list li + li{margin-top:4px}
+/* Align award dates and distinguish research funding from the honors list. */
+.honors-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:clamp(24px,5vw,52px);align-items:start}
+.honors-heading{font-size:11px;line-height:1.5;letter-spacing:.09em;text-transform:uppercase;color:var(--accent);margin:0 0 10px}
+.honors-list{list-style:none;padding:0;margin:0}
+.honors-list li{display:grid;grid-template-columns:5.25em minmax(0,1fr);gap:12px;padding:9px 0;border-bottom:1px solid var(--border);font-size:13px;line-height:1.55}
+.honors-list li:first-child{padding-top:0}
+.honors-list li:last-child{border-bottom:0;padding-bottom:0}
+.honors-list time{font-size:11px;font-variant-numeric:tabular-nums;color:var(--muted);padding-top:2px}
+.honors-list p,.funding-meta{margin:2px 0 0;color:var(--muted);font-size:12px}
+.funding-card{padding:20px 22px;background:var(--soft);border:1px solid var(--border);border-top:2px solid var(--accent);border-radius:4px}
+.funding-title{font-family:var(--display-font);font-size:clamp(19px,2.1vw,25px);line-height:1.25;color:var(--heading);margin:0 0 8px}
+.funding-amount{font-size:15px;font-weight:650;color:var(--accent);margin:13px 0 0}
+@media(max-width:620px){.honors-grid{grid-template-columns:minmax(0,1fr);gap:22px}}
