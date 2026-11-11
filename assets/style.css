@@ -168,11 +168,11 @@ main{min-width:0}.eyebrow{color:var(--accent);font-size:10px;font-weight:650;let
 /* ---- Motion: cards lift slightly on hover ---- */
 .publication{transition:transform .3s cubic-bezier(.2,.7,.3,1),border-color .3s ease,box-shadow .3s ease}
 @media(hover:hover){.publication:hover{transform:translateY(-3px);border-color:color-mix(in srgb,var(--accent) 45%,var(--border));box-shadow:0 10px 24px -18px rgba(20,40,30,.45)}}
-/* Shared row feedback for news, honors, and academic service. */
-:is(.news-list article,.honors-list li,#academic-service .section-intro){transition:background-color .25s ease}
-@media(hover:hover){:is(.news-list article,.honors-list li,#academic-service .section-intro):hover{background:color-mix(in srgb,var(--accent) 5%,transparent)}}
-:is(.news-list article,.honors-list li,#academic-service .section-intro):focus-within{background:color-mix(in srgb,var(--accent) 5%,transparent)}
-@media(prefers-reduced-motion:reduce){:is(.news-list article,.honors-list li,#academic-service .section-intro){transition:none}}
+/* Shared row feedback for news, honors, funding, and academic service. */
+:is(.news-list article,.honors-list li,.funding-entry,#academic-service .section-intro){transition:background-color .25s ease}
+@media(hover:hover){:is(.news-list article,.honors-list li,.funding-entry,#academic-service .section-intro):hover{background:color-mix(in srgb,var(--accent) 5%,transparent)}}
+:is(.news-list article,.honors-list li,.funding-entry,#academic-service .section-intro):focus-within{background:color-mix(in srgb,var(--accent) 5%,transparent)}
+@media(prefers-reduced-motion:reduce){:is(.news-list article,.honors-list li,.funding-entry,#academic-service .section-intro){transition:none}}
 
 /* ---- Motion: faint drifting grid behind the header area ---- */
 .page-layout{position:relative}
